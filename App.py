@@ -4,9 +4,11 @@ import glob
 import ler_arquivos
 
 def clearAll():
-    if os.path.exists("./codigos_de_barras.xlsm"):
-        os.remove("./codigos_de_barras.xlsm")
-    
+    for filename in os.listdir("./"):
+        if filename.endswith(".xlsm") and filename != "codigos_de_barras.xlsm"":
+            file_path = os.path.join("./", filename)
+            os.remove(file_path)
+
     arqs = glob.glob('./Arquivos/*')
     for arq in arqs:
         os.remove(arq)
