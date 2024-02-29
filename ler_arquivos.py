@@ -48,6 +48,9 @@ def detectar(imagem,i):
     return None
 
 def main():
+    for cell in planilha['A2':'A{}'.format(planilha.max_row)]:
+        cell[0].value = None
+        
     converterPdf()
 
     pastaArquivos = os.path.join(local, "Arquivos")
@@ -64,7 +67,7 @@ def main():
             planilha.cell(row=2+i, column=3, value="Erro na leitura do PDF")
             st.write("Erro na leitura do PDF:", e)
         i += 1
-        
+
     arquivo_excel.save("./codigos_de_barras.xlsm")
 
 if __name__ == "__main__":
