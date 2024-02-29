@@ -63,9 +63,9 @@ def main():
         except Exception as e:
             planilha.cell(row=2+i, column=3, value="Erro na leitura do PDF")
             st.write("Erro na leitura do PDF:", e)
-        arquivo_excel.save("./codigos_de_barras.xlsm")
         i += 1
-    arquivo_excel.close()
+        
+    arquivo_excel.save("./codigos_de_barras.xlsm")
 
 if __name__ == "__main__":
     main()
