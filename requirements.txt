@@ -4,3 +4,4 @@ pyzbar
 openpyxl
 pdf2image
 zbar-py
+opencv-python
