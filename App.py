@@ -35,10 +35,9 @@ if st.button('Executar'):
         btDownload = st.download_button(
             label ="📥 Download",
             data = planilha,
-            file_name="codigos_de_barras.xlsm"
+            file_name="codigos_de_barras.xlsm",
+             on_click=clearAll()
         )
-    if btDownload:
-         clearAll()
 
 style = """
 <style>
