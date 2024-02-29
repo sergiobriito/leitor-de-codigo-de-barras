@@ -50,7 +50,13 @@ def detectar(imagem,i):
 def main():
     for cell in planilha['A2':'A{}'.format(planilha.max_row)]:
         cell[0].value = None
-        
+    
+    for cell in planilha['B2':'A{}'.format(planilha.max_row)]:
+        cell[0].value = None
+
+    for cell in planilha['C2':'A{}'.format(planilha.max_row)]:
+        cell[0].value = None
+
     converterPdf()
 
     pastaArquivos = os.path.join(local, "Arquivos")
