@@ -27,7 +27,7 @@ if st.button('Executar'):
     st.success('Concluído!', icon="✅")
 
     filelist=[]
-    for root, dirs, files in os.walk("your folder directory"):
+    for root, dirs, files in os.walk("./"):
           for file in files:
                  filename=os.path.join(root, file)
                  filelist.append(filename)
