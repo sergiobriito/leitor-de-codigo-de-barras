@@ -14,7 +14,7 @@ planilha = arquivo_excel['CÓDIGOS']
 
 # Função para converter PDF em PNG
 def converterPdf():
-    poppler_path = os.path.join(local, "Poppler", "bin")
+    poppler_path = os.path.join("./", "Poppler", "bin")
     arquivos = glob(os.path.join(local, "Arquivos", "*.pdf"))
     for arquivo in arquivos:
         #try:
