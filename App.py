@@ -6,7 +6,18 @@ import ler_arquivos
 st.set_page_config(page_icon="📄", page_title="Leitor de código de barras")
 st.title("📄 Leitor de código de barras")
 
-st.session_state.numk = 0
+def clearAll():
+     for filename in os.listdir("./"):
+        if filename.endswith(".xlsm") and filename != "codigos_de_barras_og.xlsm":
+            file_path = os.path.join("./", filename)
+            os.remove(file_path)
+        st.write(f"Removed: {file_path}")
+     
+     arqs = glob.glob('./Arquivos/*')
+     for arq in arqs:
+        os.remove(arq)
+
+clearAll()
 
 uploaded_files = st.file_uploader('Inserir os arquivos:', accept_multiple_files=True)
 
