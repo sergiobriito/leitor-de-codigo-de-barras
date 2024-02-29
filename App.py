@@ -7,6 +7,13 @@ st.set_page_config(page_icon="📄", page_title="Leitor de código de barras")
 st.title("📄 Leitor de código de barras")
 
 def clear():
+     pycache_dir = os.path.join(directory, "__pycache__")
+     if os.path.exists(pycache_dir):
+            shutil.rmtree(pycache_dir)
+            print(f"Removed {pycache_dir}")
+     else:
+            print(f"No {pycache_dir} found")
+
      for filename in os.listdir("./"):
         st.write(filename)
         if filename.endswith(".xlsm") and filename != "codigos_de_barras_og.xlsm":

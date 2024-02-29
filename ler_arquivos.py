@@ -17,15 +17,15 @@ def converterPdf():
     poppler_path = os.path.join("./", "Poppler", "bin")
     arquivos = glob(os.path.join(local, "Arquivos", "*.pdf"))
     for arquivo in arquivos:
-        #try:
-        print(arquivo)
-        convertido = convert_from_path(arquivo, first_page=1, last_page=1)
-        for i, image in enumerate(convertido):
-            nome = str(arquivo).replace(".pdf", "") + ".png"
-            st.write(nome)
-            image.save(nome, "PNG")
-        #except Exception as e:
-        #    st.write(str(arquivo) + " - ERRO:", e)
+        try:
+            print(arquivo)
+            convertido = convert_from_path(arquivo, first_page=1, last_page=1)
+            for i, image in enumerate(convertido):
+                nome = str(arquivo).replace(".pdf", "") + ".png"
+                st.write(nome)
+                image.save(nome, "PNG")
+        except Exception as e:
+            st.write(str(arquivo) + " - ERRO:", e)
 
 # Função para detectar código em imagem(PNG).
 def detectar(imagem,i):
