@@ -8,6 +8,7 @@ def clearAll():
         if filename.endswith(".xlsm") and filename != "codigos_de_barras_og.xlsm":
             file_path = os.path.join("./", filename)
             os.remove(file_path)
+            print(f"Removed: {file_path}")
 
     arqs = glob.glob('./Arquivos/*')
     for arq in arqs:
