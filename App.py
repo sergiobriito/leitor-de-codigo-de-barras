@@ -4,7 +4,6 @@ import glob
 import ler_arquivos
 
 def clearAll():
-     st.write("clearing...")
      for filename in os.listdir("./"):
         if filename.endswith(".xlsm") and filename != "codigos_de_barras_og.xlsm":
             file_path = os.path.join("./", filename)
@@ -39,9 +38,8 @@ if st.button('Executar'):
             file_name="codigos_de_barras.xlsm"
         )
 
-        if btDownload:
-             st.cache.clear()
-             clearAll()
+     if btDownload:
+          clearAll()
 
 style = """
 <style>
