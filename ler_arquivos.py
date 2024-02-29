@@ -46,10 +46,16 @@ def detectar(imagem,i):
     st.write("Não encontrado.")
     return None
 
-def main():
-    for col in planilha.iter_cols(min_row=2, max_row=999999, min_col=1, max_col=3):
-        for cell in col:
+def clear_cells_in_range(sheet, min_row, min_col, max_col):
+    for row in sheet.iter_rows(min_row=min_row, min_col=min_col, max_col=max_col):
+        if row[0].value is None:
+            break
+        for cell in row:
             cell.value = None
+
+
+def main():
+    clear_cells_in_range(planilha, min_row=2, min_col=1, max_col=3)
 
     converterPdf()
 
