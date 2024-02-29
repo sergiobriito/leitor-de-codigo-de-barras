@@ -47,7 +47,7 @@ def detectar(imagem,i):
     return None
 
 def main():
-    for col in planilha.iter_cols(min_row=2, max_row=MAX_ROWS, min_col=1, max_col=3):
+    for col in planilha.iter_cols(min_row=2, max_row=999999, min_col=1, max_col=3):
         for cell in col:
             cell.value = None
 
