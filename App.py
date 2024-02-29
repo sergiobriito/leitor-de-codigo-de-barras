@@ -3,17 +3,19 @@ import os
 import glob
 import ler_arquivos
 
+def clearAll():
+    if os.path.exists("./codigos_de_barras.xlsm"):
+        os.remove("./codigos_de_barras.xlsm")
+    
+    arqs = glob.glob('./Arquivos/*')
+    for arq in arqs:
+        os.remove(arq)
+
 st.set_page_config(page_icon="📄", page_title="Leitor de código de barras")
 st.title("📄 Leitor de código de barras")
+clearAll()
 
 uploaded_files = st.file_uploader('Inserir os arquivos:', accept_multiple_files=True)
-
-if os.path.exists("./codigos_de_barras.xlsm"):
-    os.remove("./codigos_de_barras.xlsm")
-
-arqs = glob.glob('./Arquivos/*')
-for arq in arqs:
-    os.remove(arq)
 
 if st.button('Executar'):
     for uploaded_file in uploaded_files:
@@ -34,6 +36,7 @@ if st.button('Executar'):
         )
 
         if btDownload:
+            clearAll()
             st.experimental_rerun()
 
 style = """
