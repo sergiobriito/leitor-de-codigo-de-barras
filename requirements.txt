@@ -4,4 +4,4 @@ pyzbar
 openpyxl
 pdf2image
 zbar-py
-opencv-python
+opencv-python-headless
