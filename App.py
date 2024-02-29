@@ -1,6 +1,7 @@
 import streamlit as st
 import os
 import glob
+import shutil
 import ler_arquivos
 
 st.set_page_config(page_icon="📄", page_title="Leitor de código de barras")
