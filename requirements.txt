@@ -5,4 +5,4 @@ openpyxl
 pdf2image
 zbar-py
 opencv-python-headless
-poppler-utils
+poppler-util
