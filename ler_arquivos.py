@@ -7,7 +7,7 @@ from glob import glob
 from pdf2image import convert_from_path
 import streamlit as st
 
-local = os.getcwd()
+local = "./"
 caminhoPlanilha = os.path.join(local, "codigos_de_barras_og.xlsm")
 arquivo_excel = load_workbook(caminhoPlanilha, read_only=False, keep_vba=True)
 planilha = arquivo_excel['CÓDIGOS']
@@ -17,6 +17,7 @@ def converterPdf():
     poppler_path = os.path.join(local, "Poppler", "bin")
     arquivos = glob(os.path.join(local, "Arquivos", "*.pdf"))
     for arquivo in arquivos:
+        st.write(str(arquivo) + " - ERRO:", e)
         try:
             print(arquivo)
             convertido = convert_from_path(arquivo, poppler_path=poppler_path, first_page=1, last_page=1)
@@ -69,9 +70,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    filelist=[]
-    for root, dirs, files in os.walk("./"):
-          for file in files:
-                 filename=os.path.join(root, file)
-                 filelist.append(filename)
-    st.write(filelist)
