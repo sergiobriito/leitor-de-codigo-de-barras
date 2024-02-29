@@ -40,7 +40,8 @@ if st.button('Executar'):
         )
 
         if btDownload:
-            clearAll()
+             st.cache.clear()
+             clearAll()
 
 style = """
 <style>
