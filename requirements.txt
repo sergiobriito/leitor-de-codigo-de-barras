@@ -4,3 +4,4 @@ pyzbar
 openpyxl
 pdf2image
 zbar-devel
+zbar-py
