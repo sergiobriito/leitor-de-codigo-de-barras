@@ -14,7 +14,6 @@ planilha = arquivo_excel['CÓDIGOS']
 
 # Função para converter PDF em PNG
 def converterPdf():
-    poppler_path = os.path.join("./", "Poppler", "bin")
     arquivos = glob(os.path.join(local, "Arquivos", "*.pdf"))
     for arquivo in arquivos:
         try:
@@ -48,14 +47,9 @@ def detectar(imagem,i):
     return None
 
 def main():
-    for cell in planilha['A2':'A{}'.format(999999)]:
-        cell[0].value = None
-    
-    for cell in planilha['B2':'A{}'.format(999999)]:
-        cell[0].value = None
-
-    for cell in planilha['C2':'A{}'.format(999999)]:
-        cell[0].value = None
+    for col in planilha.iter_cols(min_row=2, max_row=MAX_ROWS, min_col=1, max_col=3):
+        for cell in col:
+            cell.value = None
 
     converterPdf()
 
