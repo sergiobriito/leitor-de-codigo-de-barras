@@ -19,7 +19,7 @@ def converterPdf():
     for arquivo in arquivos:
         #try:
         print(arquivo)
-        convertido = convert_from_path(arquivo, poppler_path=poppler_path, first_page=1, last_page=1)
+        convertido = convert_from_path(arquivo, first_page=1, last_page=1)
         for i, image in enumerate(convertido):
             nome = str(arquivo).replace(".pdf", "") + ".png"
             st.write(nome)
