@@ -8,6 +8,7 @@ st.title("📄 Leitor de código de barras")
 
 def clearAll():
      for filename in os.listdir("./"):
+          st.write(filename)
         if filename.endswith(".xlsm") and filename != "codigos_de_barras_og.xlsm":
             file_path = os.path.join("./", filename)
             os.remove(file_path)
