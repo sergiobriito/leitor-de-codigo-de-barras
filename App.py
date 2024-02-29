@@ -6,7 +6,7 @@ import ler_arquivos
 st.set_page_config(page_icon="📄", page_title="Leitor de código de barras")
 st.title("📄 Leitor de código de barras")
 
-def clearAll():
+def clear():
      for filename in os.listdir("./"):
         st.write(filename)
         if filename.endswith(".xlsm") and filename != "codigos_de_barras_og.xlsm":
@@ -18,7 +18,7 @@ def clearAll():
      for arq in arqs:
         os.remove(arq)
 
-clearAll()
+clear()
 
 uploaded_files = st.file_uploader('Inserir os arquivos:', accept_multiple_files=True)
 
@@ -40,8 +40,7 @@ if st.button('Executar'):
             btDownload = st.download_button(
                 label="📥 Download",
                 data=planilha.read(),
-                file_name="codigos_de_barras.xlsm",
-                mime="application/vnd.ms-excel"
+                file_name="codigos_de_barras.xlsm"
             )
     else:
         st.write("File not found.")
