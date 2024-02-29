@@ -4,6 +4,7 @@ import glob
 import ler_arquivos
 
 def clearAll():
+     print("clearing...")
     for filename in os.listdir("./"):
         if filename.endswith(".xlsm") and filename != "codigos_de_barras_og.xlsm":
             file_path = os.path.join("./", filename)
