@@ -26,7 +26,7 @@ if st.button('Executar'):
     ler_arquivos.main()
     st.success('Concluído!', icon="✅")
 
-    with open("./codigos_de_barras.xlsm","rb") as planilha:
+    with open("codigos_de_barras.xlsm","rb") as planilha:
         btDownload = st.download_button(
             label ="📥 Download",
             data = planilha,
