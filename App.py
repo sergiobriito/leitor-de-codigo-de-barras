@@ -8,8 +8,8 @@ st.title("📄 Leitor de código de barras")
 
 uploaded_files = st.file_uploader('Inserir os arquivos:', accept_multiple_files=True)
 
-#if os.path.exists("codigos_de_barras.xlsm"):
-#    os.remove("codigos_de_barras.xlsm")
+if os.path.exists("codigos_de_barras.xlsm"):
+    os.remove("codigos_de_barras.xlsm")
 
 arqs = glob.glob('./Arquivos/*')
 for arq in arqs:
@@ -26,7 +26,7 @@ if st.button('Executar'):
     ler_arquivos.main()
     st.success('Concluído!', icon="✅")
 
-    with open("codigos_de_barras.xlsm","rb") as planilha:
+    with open("./codigos_de_barras.xlsm","rb") as planilha:
         btDownload = st.download_button(
             label ="📥 Download",
             data = planilha,
