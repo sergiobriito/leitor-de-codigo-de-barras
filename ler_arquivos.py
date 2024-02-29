@@ -17,7 +17,6 @@ def converterPdf():
     poppler_path = os.path.join(local, "Poppler", "bin")
     arquivos = glob(os.path.join(local, "Arquivos", "*.pdf"))
     for arquivo in arquivos:
-        st.write(str(arquivo) + " - ERRO:", e)
         try:
             print(arquivo)
             convertido = convert_from_path(arquivo, poppler_path=poppler_path, first_page=1, last_page=1)
