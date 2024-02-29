@@ -37,6 +37,9 @@ if st.button('Executar'):
             data = planilha,
             file_name="codigos_de_barras.xlsm"
         )
+         
+    clearAll()
+         
 
 style = """
 <style>
