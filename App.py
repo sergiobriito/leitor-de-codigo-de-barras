@@ -5,14 +5,14 @@ import ler_arquivos
 
 def clearAll():
      print("clearing...")
-    for filename in os.listdir("./"):
+     for filename in os.listdir("./"):
         if filename.endswith(".xlsm") and filename != "codigos_de_barras_og.xlsm":
             file_path = os.path.join("./", filename)
             os.remove(file_path)
             print(f"Removed: {file_path}")
-
-    arqs = glob.glob('./Arquivos/*')
-    for arq in arqs:
+     
+     arqs = glob.glob('./Arquivos/*')
+     for arq in arqs:
         os.remove(arq)
 
 st.set_page_config(page_icon="📄", page_title="Leitor de código de barras")
