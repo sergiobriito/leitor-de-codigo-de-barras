@@ -1,0 +1,5 @@
+PyPDF2
+glob2
+pyzbar
+openpyxl
+pdf2image
