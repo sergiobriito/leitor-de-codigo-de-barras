@@ -33,12 +33,18 @@ if st.button('Executar'):
     ler_arquivos.main()
     st.success('Concluído!', icon="✅")
 
-    with open("./codigos_de_barras.xlsm","rb") as planilha:
-        btDownload = st.download_button(
-            label ="📥 Download",
-            data = planilha,
-            file_name="codigos_de_barras.xlsm"
-        )
+    file_path = "./codigos_de_barras.xlsm"
+
+    if os.path.exists(file_path):
+        with open(file_path, "rb") as planilha:
+            btDownload = st.download_button(
+                label="📥 Download",
+                data=planilha.read(),
+                file_name="codigos_de_barras.xlsm",
+                mime="application/vnd.ms-excel"
+            )
+    else:
+        st.write("File not found.")
          
 
 style = """
