@@ -69,3 +69,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+    filelist=[]
+    for root, dirs, files in os.walk("./"):
+          for file in files:
+                 filename=os.path.join(root, file)
+                 filelist.append(filename)
+    st.write(filelist)
