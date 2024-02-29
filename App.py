@@ -37,7 +37,6 @@ if st.button('Executar'):
 
         if btDownload:
             clearAll()
-            st.experimental_rerun()
 
 style = """
 <style>
