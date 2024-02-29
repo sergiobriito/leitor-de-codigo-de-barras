@@ -9,9 +9,6 @@ st.title("📄 Leitor de código de barras")
 
 def clear():
      dir = "./"
-     pycache_dir = os.path.join(dir, "__pycache__")
-     if os.path.exists(pycache_dir):
-            shutil.rmtree(pycache_dir)
      for filename in os.listdir(dir):
         if filename.endswith(".xlsm") and filename != "codigos_de_barras_og.xlsm":
             file_path = os.path.join(dir, filename)

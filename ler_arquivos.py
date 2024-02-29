@@ -50,6 +50,9 @@ def detectar(imagem,i):
 def main():
     converterPdf()
 
+    if os.path.exists("./codigos_de_barras.xlsm"):
+        os.remove("./codigos_de_barras.xlsm")
+
     pastaArquivos = os.path.join(local, "Arquivos")
     arquivos = glob(os.path.join(local, "Arquivos", "*.png"))
     i = 0
@@ -63,7 +66,6 @@ def main():
         except Exception as e:
             planilha.cell(row=2+i, column=3, value="Erro na leitura do PDF")
             st.write("Erro na leitura do PDF:", e)
-
         arquivo_excel.save("./codigos_de_barras.xlsm")
         i += 1
 
