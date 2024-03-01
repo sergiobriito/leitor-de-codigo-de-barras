@@ -14,7 +14,6 @@ def clear():
      for arq in arqs:
         os.remove(arq)
 
-
 st.set_page_config(page_icon="📄", page_title="Leitor de código de barras")
 st.title("📄 Leitor de código de barras")
 
@@ -44,6 +43,7 @@ if st.button('Executar'):
     st.success("Processando...")
     ler_arquivos.main()
     st.success('Concluído!', icon="✅")
+    st.rerun()
     
 
 style = """
