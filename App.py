@@ -15,7 +15,7 @@ def clear():
      for arq in arqs:
         os.remove(arq)
 
-st.set_page_config(page_icon="📄", page_title="Leitor de código de barras")
+st.set_page_config(page_icon='./icon.png', page_title="Leitor de código de barras")
 
 title_container = st.container()
 col1, col2 = st.columns([4, 20])
