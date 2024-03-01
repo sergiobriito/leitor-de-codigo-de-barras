@@ -15,11 +15,12 @@ def clear():
      for arq in arqs:
         os.remove(arq)
 
+st.set_page_config(page_icon="📄", page_title="Leitor de código de barras")
+
 st.image(
             "https://cdn-icons-png.flaticon.com/512/3481/3481266.png",
-            width=400, # Manually Adjust the width of the image as per requirement
+            width=100, 
         )
-st.set_page_config(page_icon="📄", page_title="Leitor de código de barras")
 st.title("📄 Leitor de código de barras")
 
 file_path = "./codigos_de_barras.xlsm"
