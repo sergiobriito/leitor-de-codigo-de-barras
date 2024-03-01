@@ -21,9 +21,9 @@ title_container = st.container()
 col1, col2 = st.columns([1, 20])
 with title_container:
     with col1:
-        st.image('https://cdn-icons-png.flaticon.com/512/3481/3481266.png', width=64)
+        st.image('https://cdn-icons-png.flaticon.com/512/3481/3481266.png', width=100)
     with col2:
-        st.markdown('<h1 style="color: purple;">Leitor de código de barras"</h1>', unsafe_allow_html=True)
+        st.markdown('<h1>Leitor de código de barras</h1>', unsafe_allow_html=True)
 
 file_path = "./codigos_de_barras.xlsm"
 if os.path.exists(file_path):
