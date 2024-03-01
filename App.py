@@ -6,8 +6,6 @@ import ler_arquivos
 
 def clear():
      dir = "./"
-     if os.path.exists(pycache_dir):
-            shutil.rmtree(pycache_dir)
      for filename in os.listdir(dir):
         if filename.endswith(".xlsm") and filename != "codigos_de_barras_og.xlsm":
             file_path = os.path.join(dir, filename)
