@@ -24,9 +24,8 @@ if os.path.exists(file_path):
         btDownload = st.download_button(
             label="📥 Download",
             data=planilha.read(),
-            file_name="codigos_de_barras.xlsm",
-            on_click=clear()
-        ) 
+            file_name="codigos_de_barras.xlsm"
+        )
 
 uploaded_files = st.file_uploader('Inserir os arquivos:', accept_multiple_files=True)
 
