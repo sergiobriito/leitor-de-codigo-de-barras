@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+import Image
 import glob
 import shutil
 import time
