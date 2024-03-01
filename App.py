@@ -21,7 +21,7 @@ title_container = st.container()
 col1, col2 = st.columns([4, 20])
 with title_container:
     with col1:
-        st.image('https://cdn-icons-png.flaticon.com/512/3481/3481266.png', width=100)
+        st.image('./icon.png', width=100)
     with col2:
         st.markdown('<h1>Leitor de código de barras</h1>', unsafe_allow_html=True)
 
