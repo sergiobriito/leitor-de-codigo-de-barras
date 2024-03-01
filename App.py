@@ -23,8 +23,7 @@ clear()
 uploaded_files = st.file_uploader('Inserir os arquivos:', accept_multiple_files=True)
 
 if st.button('Executar'):
-    st.write(uploaded_files)
-    if uploaded_files is None:
+    if uploaded_files = []:
         st.warning('Favor inserir os arquivos')
         st.stop()
 
