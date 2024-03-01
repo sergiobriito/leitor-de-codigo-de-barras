@@ -18,6 +18,16 @@ def clear():
 st.set_page_config(page_icon="📄", page_title="Leitor de código de barras")
 st.title("📄 Leitor de código de barras")
 
+file_path = "./codigos_de_barras.xlsm"
+
+if os.path.exists(file_path):
+    with open(file_path, "rb") as planilha:
+        btDownload = st.download_button(
+            label="📥 Download",
+            data=planilha.read(),
+            file_name="codigos_de_barras.xlsm"
+        ) 
+
 clear()
 
 uploaded_files = st.file_uploader('Inserir os arquivos:', accept_multiple_files=True)
@@ -35,16 +45,7 @@ if st.button('Executar'):
     st.success("Processando...")
     ler_arquivos.main()
     st.success('Concluído!', icon="✅")
-
-    file_path = "./codigos_de_barras.xlsm"
-
-    if os.path.exists(file_path):
-        with open(file_path, "rb") as planilha:
-            btDownload = st.download_button(
-                label="📥 Download",
-                data=planilha.read(),
-                file_name="codigos_de_barras.xlsm"
-            )     
+    
 
 style = """
 <style>
