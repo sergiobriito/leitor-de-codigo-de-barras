@@ -30,11 +30,11 @@ if os.path.exists(file_path):
 uploaded_files = st.file_uploader('Inserir os arquivos:', accept_multiple_files=True)
 
 if st.button('Executar'):
+    clear()
+
     if not uploaded_files:
         st.warning('Favor inserir os arquivos')
         st.stop()
-
-    clear()
 
     for uploaded_file in uploaded_files:
         file_path = os.path.join("Arquivos", uploaded_file.name)
