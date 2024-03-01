@@ -19,16 +19,14 @@ st.set_page_config(page_icon="📄", page_title="Leitor de código de barras")
 st.title("📄 Leitor de código de barras")
 
 file_path = "./codigos_de_barras.xlsm"
-
 if os.path.exists(file_path):
     with open(file_path, "rb") as planilha:
         btDownload = st.download_button(
             label="📥 Download",
             data=planilha.read(),
-            file_name="codigos_de_barras.xlsm"
+            file_name="codigos_de_barras.xlsm",
+            on_click=clear()
         ) 
-
-clear()
 
 uploaded_files = st.file_uploader('Inserir os arquivos:', accept_multiple_files=True)
 
@@ -36,6 +34,8 @@ if st.button('Executar'):
     if not uploaded_files:
         st.warning('Favor inserir os arquivos')
         st.stop()
+
+    clear()
 
     for uploaded_file in uploaded_files:
         file_path = os.path.join("Arquivos", uploaded_file.name)
