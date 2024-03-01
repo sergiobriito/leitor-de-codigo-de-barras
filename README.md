@@ -1,3 +1,3 @@
-﻿# leitor-de-codigo-de-barras
+﻿# Leitor de código de barras em Python (Streamlit)
 
-https://leitor-de-codigo-de-barras.streamlit.app/
+Link: https://leitor-de-codigo-de-barras.streamlit.app/
