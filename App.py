@@ -18,7 +18,7 @@ def clear():
 st.set_page_config(page_icon="📄", page_title="Leitor de código de barras")
 
 title_container = st.container()
-col1, col2 = st.beta_columns([1, 20])
+col1, col2 = st.columns([1, 20])
 image = Image.open('https://cdn-icons-png.flaticon.com/512/3481/3481266.png')
 with title_container:
     with col1:
