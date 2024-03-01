@@ -2,6 +2,7 @@ import streamlit as st
 import os
 import glob
 import shutil
+import time
 import ler_arquivos
 
 def clear():
@@ -43,7 +44,7 @@ if st.button('Executar'):
     st.success("Processando...")
     ler_arquivos.main()
     st.toast('Concluído!', icon="✅")
-    st.sleep(3)
+    time.sleep(.5)
     st.rerun()
     
 
