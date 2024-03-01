@@ -12,12 +12,10 @@ caminhoPlanilha = os.path.join(local, "codigos_de_barras_og.xlsm")
 arquivo_excel = load_workbook(caminhoPlanilha, read_only=False, keep_vba=True)
 planilha = arquivo_excel['CÓDIGOS']
 
-# Função para converter PDF em PNG
 def converterPdf():
     arquivos = glob(os.path.join(local, "Arquivos", "*.pdf"))
     for arquivo in arquivos:
         try:
-            print(arquivo)
             convertido = convert_from_path(arquivo, first_page=1, last_page=1)
             for i, image in enumerate(convertido):
                 nome = str(arquivo).replace(".pdf", "") + ".png"
@@ -26,7 +24,6 @@ def converterPdf():
         except Exception as e:
             st.write(str(arquivo) + " - ERRO:", e)
 
-# Função para detectar código em imagem(PNG).
 def detectar(imagem,i):
     zoom = 1.0
     zoom_step = 0.1
@@ -46,17 +43,15 @@ def detectar(imagem,i):
     st.write("Não encontrado.")
     return None
 
-def clear_cells_in_range(sheet, min_row, min_col, max_col):
+def limparPlanilha(sheet, min_row, min_col, max_col):
     for row in sheet.iter_rows(min_row=min_row, min_col=min_col, max_col=max_col):
         if row[0].value is None:
             break
         for cell in row:
             cell.value = None
 
-
 def main():
-    clear_cells_in_range(planilha, min_row=2, min_col=1, max_col=3)
-
+    limparPlanilha(planilha, min_row=2, min_col=1, max_col=3)
     converterPdf()
 
     pastaArquivos = os.path.join(local, "Arquivos")

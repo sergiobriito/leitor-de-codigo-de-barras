@@ -4,11 +4,10 @@ import glob
 import shutil
 import ler_arquivos
 
-st.set_page_config(page_icon="📄", page_title="Leitor de código de barras")
-st.title("📄 Leitor de código de barras")
-
 def clear():
      dir = "./"
+     if os.path.exists(pycache_dir):
+            shutil.rmtree(pycache_dir)
      for filename in os.listdir(dir):
         if filename.endswith(".xlsm") and filename != "codigos_de_barras_og.xlsm":
             file_path = os.path.join(dir, filename)
@@ -17,16 +16,23 @@ def clear():
      for arq in arqs:
         os.remove(arq)
 
+
+st.set_page_config(page_icon="📄", page_title="Leitor de código de barras")
+st.title("📄 Leitor de código de barras")
+
 clear()
 
 uploaded_files = st.file_uploader('Inserir os arquivos:', accept_multiple_files=True)
 
 if st.button('Executar'):
+    if uploaded_file is None:
+        st.warning('Favor inserir os arquivos')
+        st.stop()
+
     for uploaded_file in uploaded_files:
-        if uploaded_file is not None:
-            file_path = os.path.join("Arquivos", uploaded_file.name)
-            with open(file_path, "wb") as f:
-                f.write(uploaded_file.getvalue())
+        file_path = os.path.join("Arquivos", uploaded_file.name)
+        with open(file_path, "wb") as f:
+            f.write(uploaded_file.getvalue())
                 
     st.success("Processando...")
     ler_arquivos.main()
@@ -40,8 +46,7 @@ if st.button('Executar'):
                 label="📥 Download",
                 data=planilha.read(),
                 file_name="codigos_de_barras.xlsm"
-            )
-         
+            )     
 
 style = """
 <style>
