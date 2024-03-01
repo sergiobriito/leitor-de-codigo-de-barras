@@ -43,7 +43,7 @@ if st.button('Executar'):
     st.success("Processando...")
     ler_arquivos.main()
     st.toast('Concluído!', icon="✅")
-    st.rerun()
+
     
 
 style = """
