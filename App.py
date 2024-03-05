@@ -41,7 +41,7 @@ if st.button('Executar'):
 
     if not uploaded_files:
         st.toast('Favor inserir os arquivos')
-        st.experimental_rerun()
+        st.rerun()
 
     for uploaded_file in uploaded_files:
         file_path = os.path.join("Arquivos", uploaded_file.name)
