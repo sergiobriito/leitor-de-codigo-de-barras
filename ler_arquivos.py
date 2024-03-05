@@ -9,7 +9,7 @@ import streamlit as st
 
 local = "./"
 caminhoPlanilha = os.path.join(local, "Planilha de lançamentos - v2.0 - OG.xlsm")
-arquivo_excel = load_workbook(caminhoPlanilha, read_only=False, keep_vba=True)
+arquivo_excel = load_workbook(caminhoPlanilha, read_only=False, rich_text=True, keep_vba=True)
 planilha = arquivo_excel['CÓDIGOS']
 
 def converterPdf():
