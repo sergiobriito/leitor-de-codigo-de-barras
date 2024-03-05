@@ -25,13 +25,13 @@ with title_container:
     with col2:
         st.markdown('<h1>Leitor de código de barras</h1>', unsafe_allow_html=True)
 
-file_path = "./codigos_de_barras.xlsm"
+file_path = "./Planilha de lançamentos - v2.0.xlsm"
 if os.path.exists(file_path):
     with open(file_path, "rb") as planilha:
         btDownload = st.download_button(
             label="📥 Download",
             data=planilha.read(),
-            file_name="codigos_de_barras.xlsm"
+            file_name="Planilha de lançamentos - v2.0.xlsm"
         )
 
 uploaded_files = st.file_uploader('Inserir os arquivos:', accept_multiple_files=True)
