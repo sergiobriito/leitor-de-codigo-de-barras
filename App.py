@@ -40,7 +40,7 @@ if st.button('Executar'):
     clear()
 
     if not uploaded_files:
-        st.toast('Favor inserir os arquivos')
+        st.warning('Favor inserir os arquivos')
         st.rerun()
 
     for uploaded_file in uploaded_files:
