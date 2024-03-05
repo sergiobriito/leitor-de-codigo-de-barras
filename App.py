@@ -40,8 +40,7 @@ if st.button('Executar'):
     clear()
 
     if not uploaded_files:
-        st.warning('Favor inserir os arquivos')
-        st.stop()
+        st.toast('Favor inserir os arquivos')
 
     for uploaded_file in uploaded_files:
         file_path = os.path.join("Arquivos", uploaded_file.name)
