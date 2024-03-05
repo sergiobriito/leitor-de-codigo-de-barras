@@ -41,7 +41,6 @@ if st.button('Executar'):
 
     if not uploaded_files:
         st.warning('Favor inserir os arquivos')
-        time.sleep(3)
         st.rerun()
 
     for uploaded_file in uploaded_files:
