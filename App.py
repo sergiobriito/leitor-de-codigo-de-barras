@@ -8,7 +8,7 @@ import ler_arquivos
 def clear():
      dir = "./"
      for filename in os.listdir(dir):
-        if filename.endswith(".xlsm") and filename != "codigos_de_barras_og.xlsm":
+        if filename.endswith(".xlsm") and filename != "Planilha de lançamentos - v2.0 - OG.xlsm":
             file_path = os.path.join(dir, filename)
             os.remove(file_path)
      arqs = glob.glob('./Arquivos/*')

@@ -8,7 +8,7 @@ from pdf2image import convert_from_path
 import streamlit as st
 
 local = "./"
-caminhoPlanilha = os.path.join(local, "codigos_de_barras_og.xlsm")
+caminhoPlanilha = os.path.join(local, "Planilha de lançamentos - v2.0 - OG.xlsm")
 arquivo_excel = load_workbook(caminhoPlanilha, read_only=False, keep_vba=True)
 planilha = arquivo_excel['CÓDIGOS']
 
@@ -69,7 +69,7 @@ def main():
             st.write("Erro na leitura do PDF:", e)
         i += 1
 
-    arquivo_excel.save("./codigos_de_barras.xlsm")
+    arquivo_excel.save("./Planilha de lançamentos - v2.0.xlsm")
 
 if __name__ == "__main__":
     main()
