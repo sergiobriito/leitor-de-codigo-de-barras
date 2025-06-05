@@ -1,9 +1,1 @@
-PyPDF2
-glob2
-pyzbar
-openpyxl
-pdf2image
-zbar-py
-opencv-python-headless
-poppler-utils
 streamlit
