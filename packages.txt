@@ -1,3 +1,2 @@
 libzbar0
 poppler-utils
-streamlit == 1.9.2 
