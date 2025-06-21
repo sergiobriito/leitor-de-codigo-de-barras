@@ -30,7 +30,6 @@ def convert_pdfs_to_images(pdf_directory: Path):
             images = convert_from_path(pdf_file, first_page=1, last_page=1)
             for i, image in enumerate(images):
                 output_image_path = pdf_file.with_suffix(".png")
-                st.write(f"Saving {output_image_path.name}")
                 image.save(output_image_path, "PNG")
         except Exception as e:
             st.error(f"Error converting PDF '{pdf_file.name}': {e}")
